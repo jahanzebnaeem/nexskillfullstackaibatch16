@@ -156,7 +156,7 @@ for item1,item2 in mypairs:
 i = 1
 while i < 5:
     print('i is: {}'.format(i))
-    i = i+1
+    i = i+1 
 
 #####################
 ### OTHER TOPICS ####
