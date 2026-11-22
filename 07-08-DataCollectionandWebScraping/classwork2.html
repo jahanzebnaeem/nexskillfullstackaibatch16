@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>PyScript Hello World</title>
+        <!-- Load PyScript CSS -->
+        <!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css"> -->
+        <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+        <!-- Load PyScript JS -->
+        <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+    </head>
+    <body>
+        <h1>Python in HTML</h1>
+        <py-script>
+            from pyscript import display
+            from pyodide.http import pyfetch
+
+            display("Hello, World!")
+            print("Debugging: script started")
+
+            url = "https://jsonplaceholder.typicode.com/posts"
+            response = await pyfetch(url)
+            posts = await response.json()
+
+            for post in posts[:5]:
+                display(f"Post ID: {post['id']}, Title: {post['title']}")
+                print(f"Debugging - Post ID: {post['id']}, Title: {post['title']}")
+
+            print("Debugging: script finished")
+        </py-script>
+    </body>
+</html>

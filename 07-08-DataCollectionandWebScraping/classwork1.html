@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>PyScript Hello World</title>
+        <!-- Load PyScript CSS -->
+        <!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css"> -->
+        <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+        <!-- Load PyScript JS -->
+        <!-- <script type="module" src="https://pyscript.net/latest/pyscript.js"></script> -->
+        <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+    </head>
+    <body>
+        <h1>Python in HTML</h1>
+        <py-script>
+            from pyscript import display
+
+            # This appears on the PAGE
+            display("Hello, World!")
+
+            # These appear in browser DevTools Console (F12 → Console tab)
+            print("Hello, World!")
+
+        </py-script>
+    </body>
+</html>

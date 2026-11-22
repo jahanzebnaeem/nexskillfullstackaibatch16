@@ -9,4 +9,11 @@ soup = BeautifulSoup(response.content, "html.parser")
 
 for book in soup.find_all("h3"):
     title = book.find("a")["title"]
-    print(title)
+    #price = book.select_one(".price_color").get_text(strip=True)
+    price = book.find_next("p", class_="price_color").get_text(strip=True)
+    #availability = book.select_one(".availability").get_text(" ", strip=True)
+    availability = book.find_next("p", class_="instock availability").get_text(" ", strip=True)
+    #print(title, price, availability)
+    #if "In stock" in availability:
+    if availability.strip() == "In stock":
+        print(title, price, availability)
